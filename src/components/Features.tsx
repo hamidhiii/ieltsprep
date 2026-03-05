@@ -5,8 +5,8 @@ const Features = () => {
     const features = [
         {
             icon: <ClipboardCheck className="w-6 h-6 text-primary" />,
-            title: "Full-Length IELTS Mock Tests",
-            description: "Simulate the real IELTS exam with full-length practice tests covering all four sections under timed conditions."
+            title: "Simulated IELTS Mock Tests",
+            description: "Practice individual IELTS sections under timed conditions with our realistic exam simulation environment."
         },
         {
             icon: <Zap className="w-6 h-6 text-primary" />,

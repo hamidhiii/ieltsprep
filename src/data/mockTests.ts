@@ -1,31 +1,31 @@
 export const readingTests = [
     {
         id: 'r1',
-        title: 'The Evolution of Computing',
+        title: 'The Clipper Races: Ship Competition',
         duration: '60 mins',
         questions: 40,
         type: 'Reading',
         difficulty: 'Medium',
         sections: [
             {
-                title: 'Passage 1: From Abacus to AI',
-                content: 'The history of computing is a fascinating journey that spans millennia...',
-                questions: '1. Why did the abacus remain popular? 2. How did the Turing machine change logic?'
+                title: 'Passage 1: The Clipper Races',
+                content: 'The history of clipper ships...',
+                questions: '1-13'
             }
         ]
     },
     {
         id: 'r2',
-        title: 'Marine Biodiversity in the Pacific',
+        title: 'CDI IELTS Reading Test Simulation',
         duration: '60 mins',
         questions: 40,
         type: 'Reading',
         difficulty: 'Hard',
         sections: [
             {
-                title: 'Passage 1: The Great Barrier Reef',
-                content: 'Coral reefs are some of the most diverse ecosystems on Earth...',
-                questions: '1. What are the main threats to the reef? 2. Describe the impact of rising temperatures.'
+                title: 'Passage 1: Orientation of birds',
+                content: 'How birds find their way...',
+                questions: '1-13'
             }
         ]
     }
@@ -40,6 +40,15 @@ export const listeningTests = [
         type: 'Listening',
         difficulty: 'Easy',
         audioTranscript: 'Welcome to the Central University campus tour. On your left is the historic library...'
+    },
+    {
+        id: 'l2',
+        title: 'CDI IELTS Listening Test Simulation',
+        duration: '30 mins',
+        questions: 40,
+        type: 'Listening',
+        difficulty: 'Medium',
+        audioTranscript: 'Asia-Pacific Tours Activity Holidays...'
     }
 ];
 

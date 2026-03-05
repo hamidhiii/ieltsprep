@@ -27,7 +27,8 @@ const Practice = () => {
             icon: <PenTool className="w-8 h-8 text-amber-500" />,
             bg: "bg-amber-50",
             title: "Writing",
-            count: "40+ Tasks",
+            count: "Under Dev",
+            isSoon: true,
             description: "AI feedback on Task 1 and Task 2 essays.",
             topics: ['Report Writing', 'Letter Writing', 'Opinion Essays', 'Discussion']
         },
@@ -36,7 +37,8 @@ const Practice = () => {
             icon: <Mic2 className="w-8 h-8 text-pink-500" />,
             bg: "bg-pink-50",
             title: "Speaking",
-            count: "30+ Sessions",
+            count: "Under Dev",
+            isSoon: true,
             description: "Real-time AI evaluation of your pronunciation.",
             topics: ['Introduction', 'Cue Card', 'Follow-up Questions']
         }
@@ -66,15 +68,22 @@ const Practice = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.1 }}
-                            className="bg-white p-8 rounded-[32px] border border-gray-100 flex flex-col sm:flex-row gap-8 hover:shadow-xl hover:border-primary/20 transition-all transition-duration-500"
+                            className={`bg-white p-8 rounded-[32px] border flex flex-col sm:flex-row gap-8 transition-all duration-500 relative overflow-hidden group ${section.isSoon ? 'border-gray-100 opacity-80' : 'border-gray-100 hover:shadow-xl hover:border-primary/20'}`}
                         >
+                            {section.isSoon && (
+                                <div className="absolute top-4 right-4 z-10">
+                                    <span className="bg-amber-100 text-amber-600 text-[10px] font-black px-3 py-1 rounded-full border border-amber-200 uppercase tracking-widest shadow-sm">
+                                        Coming Soon
+                                    </span>
+                                </div>
+                            )}
                             <div className={`${section.bg} w-20 h-20 rounded-3xl flex items-center justify-center shrink-0`}>
                                 {section.icon}
                             </div>
-                            <div className="flex-1">
+                            <div className="flex-1 text-left">
                                 <div className="flex justify-between items-center mb-2">
                                     <h3 className="text-2xl font-bold text-secondary">{section.title}</h3>
-                                    <span className="text-xs font-bold text-primary bg-primary/5 px-3 py-1 rounded-full">{section.count}</span>
+                                    {!section.isSoon && <span className="text-xs font-bold text-primary bg-primary/5 px-3 py-1 rounded-full">{section.count}</span>}
                                 </div>
                                 <p className="text-gray-500 mb-6">{section.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-8">
@@ -84,9 +93,15 @@ const Practice = () => {
                                         </span>
                                     ))}
                                 </div>
-                                <Link to="/mock-tests" className="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
-                                    Browse Tests <ArrowRight className="w-5 h-5" />
-                                </Link>
+                                {section.isSoon ? (
+                                    <div className="flex items-center gap-2 text-gray-300 font-bold">
+                                        Stay Tuned <ArrowRight className="w-5 h-5" />
+                                    </div>
+                                ) : (
+                                    <Link to="/mock-tests" className="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all">
+                                        Browse Tests <ArrowRight className="w-5 h-5" />
+                                    </Link>
+                                )}
                             </div>
                         </motion.div>
                     ))}
